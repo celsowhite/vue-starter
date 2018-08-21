@@ -4,8 +4,8 @@ import Meta from 'vue-meta'
 
 // Route Templates
 
-import Home from '@/components/Home'
-import Sample from '@/components/Sample'
+import Home from '@/components/pages/Home'
+import ExampleComponents from '@/components/pages/ExampleComponents'
 
 // Helper
 
@@ -23,9 +23,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/sample',
-      name: 'Sample',
-      component: Sample
+      path: '/example-components',
+      name: 'ExampleComponents',
+      component: ExampleComponents
     }
   ],
   scrollBehavior (to, from, savedPosition) {

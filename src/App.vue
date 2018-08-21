@@ -15,8 +15,8 @@
   // Imports
   
   import './styles/main.scss';
-  import MainHeader from './components/MainHeader';
-  import MainFooter from './components/MainFooter';
+  import MainHeader from './components/organisms/MainHeader';
+  import MainFooter from './components/organisms/MainFooter';
   
   export default {
     name: 'App',
