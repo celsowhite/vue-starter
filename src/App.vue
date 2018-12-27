@@ -1,68 +1,36 @@
 <template>
   <div id="app">
-    <transition name="header_anim" appear>
-      <MainHeader />
-    </transition>
-    <transition name="router_anim" appear mode="out-in">
-      <router-view/>
-    </transition>
-    <MainFooter />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script>
-      
-  // Imports
-  
-  import './styles/main.scss';
-  import MainHeader from './components/organisms/MainHeader';
-  import MainFooter from './components/organisms/MainFooter';
-  
-  export default {
-    name: 'App',
-    metaInfo: {
-      title: 'Vue Starter',
-      titleTemplate: '%s | Vue Starter'
-    },
-    components: {
-      MainHeader,
-      MainFooter
-    }
-  }
-  
-</script>
-
 <style lang="scss">
-      
-  /*--- 
-  Router Animation
-  ---*/
-      
-  // Enter/Appear
-      
-  .router_anim-enter-active {
-    transition: all 2s ease-in-out;
-    
-    &.main_content {
-      transition: all 1s ease-in-out;
+
+// Main / Global styles shared across the entire app.
+
+@import './styles/main.scss';
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    &.router-link-exact-active {
+      color: #42b983;
     }
   }
-  
-  .router_anim-enter, .router_anim-leave-to {
-    &.main_content {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-  }
-    
-  // Leave
-  
-  .router_anim-leave-active {
-    transition: all .5s ease-in-out;
-    
-    &.main_content {
-      transition: all .5s ease-in-out;
-    }
-  }
-            
+}
+
 </style>

@@ -1,4 +1,97 @@
+/*-------------------------------
+Structure
+-------------------------------*/
+
+.form_container {
+    margin-bottom: 30px;
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+/*-------------------------------
+Inputs
+-------------------------------*/
+
 input, button, textarea {
   border-radius: 0;
-  outline: 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+  background: $white;
+  border: 0;
+  border-bottom: 1px solid $black;
+  display: block;
+  border-radius: 0;
+  padding: 0 0 10px;
+  width: 100%;
+  outline: none;
+
+  &::placeholder {
+	color: $grey;
+  }
+
+  // Required font size for inputs to not zoom on mobile devices.
+  @include mobile_landscape {
+    font-size: 16px;
+  }
+}
+
+/*-------------------------------
+Helpers
+-------------------------------*/
+
+// Hide
+
+.form__input--is-hidden {
+    display: none;
+}
+
+/*-------------------------------
+Custom Select
+Uses custom font awesome down arrow as a psuedo element.
+-------------------------------*/
+
+.form__select {
+    position: relative;
+    width: 100%;
+}
+
+.form__select::after {
+    content: "\f107";
+    font-family: 'Font Awesome 5 Pro';
+    pointer-events: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -10px;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.form__select select {
+    appearance: none;
+    cursor: pointer;
+}
+
+/*-------------------------------
+Radios
+-------------------------------*/
+
+// Structure
+
+.form__radio-group {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// Individual Radio
+
+.form__radio {
+    margin-right: 15px;
+}
+
+.form__radio-input {
+    margin-right: 5px;
 }
